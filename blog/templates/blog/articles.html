@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles</title>
+    <link href="{% static "css/blog.css" %}" rel="stylesheet">
+</head>
+<body>
+    <img src="{% static "img/sarah.jpg"%}" alt="#" height="50" width="50">
+    {%for article in articles %}
+    <p><h3>{{article.title}}</h3></p>
+    <img src="{{ article.image.url }}" alt="#" height="200" width="200">
+
+
+    {% empty %}
+    <p>No articles yet!</p>
+    {%endfor%}
+    
+</body>
+</html>
